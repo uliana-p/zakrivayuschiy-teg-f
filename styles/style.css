@@ -13,8 +13,353 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
-
+/* ---------------------------------------ОСНОВНОЕ---------------------------------- */
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  background-image: var(--background-gradient);
+  object-fit: cover;
+  font-variation-settings: var(--font-main);
+  padding-bottom: 103px;
+}
+.margin {
+  margin-bottom: 25px;
+}
+.container {
+  display: flex;
+  width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--background-item);
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  margin: 50px auto;
+}
+
+.header {
+  font-family: var(--accent-font);
+  align-items: center;
+  display: flex;
+  text-transform: uppercase;
+  margin: 100px auto;
+  padding-top: clamp(7.5rem, 7.148rem + 1.502vw, 8.5rem);
+}
+.title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  margin-bottom: 20px;
+}
+.subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+/*--------------------------------кнопки переключения тем и их состояния---------------------------------*/
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 11px;
+  margin-left: 15px;
+}
+.theme-menu__button {
+  text-transform: uppercase;
+  background-color: transparent;
+  position: relative;
+  font-size: 14px;
+}
+.theme-menu__button:hover,
+.theme-menu__button:disabled {
+  opacity: 0.6;
+}
+.theme-menu__button:disabled {
+  pointer-events: none;
+}
+.theme-menu__button::after {
+  content: "";
+  bottom: -1px;
+  display: block;
+  position: absolute;
+  transform: scaleX(0);
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  transition: none;
+  transition:
+    transform 300ms,
+    background-color 0.5s;
+  transform-origin: left;
+}
+.theme-menu__button:hover::after {
+  transform: scaleX(1);
+  background-color: var(--main-color);
+}
+.theme-menu__button:disabled::before {
+  content: "▶";
+  left: -19px;
+  top: 1px;
+  position: absolute;
+  animation: arrow 0.5s ease-in-out infinite alternate;
+}
+@keyframes arrow {
+  0% {
+    left: -19px;
+  }
+
+  100% {
+    transform: translateX(-4px);
+  }
+}
+
+/*  ------------------------------------------------------------------------------------------------*/
+.card {
+  align-items: start;
+}
+
+.card-title {
+  padding: 5px clamp(0.625rem, 0.779rem + -0.657vw, 0.188rem);
+  font-variation-settings: var(--font-title);
+  letter-spacing: -0.02em;
+}
+
+.item {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.text-primary {
+  font-size: 18px;
+}
+.card-image {
+  position: relative;
+  overflow: hidden;
+  /* aspect-ratio: 1/1; */
+}
+.card__label {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.5;
+  color: #000;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-shadow: 0 0 1px var(--text-label-color);
+  inset-block-start: 25px;
+  inset-inline-end: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
+  mix-blend-mode: hard-light;
+}
+.image {
+  width: 100%;
+  height: auto;
+  border-top: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+}
+/*  ----------------------------------------кнопка LIKE и состояня--------------------------------------------------------*/
+.card__footer {
+  display: flex;
+  justify-content: end;
+}
+.button {
+  border: 2px solid var(--main-color);
+  display: flex;
+  position: relative;
+  background-color: var(--background-item);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.button_type_like {
+  width: 130px;
+  height: 37px;
+}
+.button_type_save {
+  padding: 15px 20px;
+}
+.button__text {
+  color: var(--button-color);
+  position: relative;
+  mix-blend-mode: difference;
+}
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0px 0px var(--main-color);
+  transition: background-color 0.5s;
+}
+.button::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: var(--main-color);
+  transform: scaleX(0);
+  height: 100%;
+  width: 100%;
+  transition: none;
+  transform-origin: left;
+}
+.button:hover::before {
+  transform: scaleX(1);
+  background-color: var(--main-color);
+  transition: 0.5s ease-in-out;
+}
+.save-button {
+  margin: 0 auto;
+}
+.button_type_save svg {
+  color: var(--button-color);
+  mix-blend-mode: difference;
+}
+
+.image__floppy {
+  inline-size: 21px;
+  block-size: 21px;
+  position: relative;
+  z-index: 1;
+  fill: var(--button-color);
+}
+/* ---------------------------------------DIALOG OPEN---------------------------------- */
+.dialog__content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-right: 30px;
+  gap: 20px;
+}
+.dialog_image__floppy {
+  inline-size: 39px;
+  color: var(--main-color);
+}
+.dialog__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  color: var(--main-color);
+  text-transform: uppercase;
+  line-height: 21px;
+}
+.dialog__box {
+  border: 2px solid var(--main-color);
+  background-color: var(--background-item);
+
+  padding: 30px;
+}
+.dialog__button_close {
+  border: 2px solid var(--main-color);
+  padding: 10px clamp(7rem, 6.604rem + 1.69vw, 8.125rem);
+}
+.dialog__box[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.dialog__box[open]::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+/* ---------------------------------------LIKE HEART---------------------------------- */
+.like-icon {
+  margin-right: 5px;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.like-icon .sparks {
+  opacity: 0;
+}
+
+.like-icon .contour {
+  fill: var(--animation-color);
+  transition: fill 0.1s linear;
+}
+
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--animation-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--animation-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked {
+  animation: change-scale 0.3s 0.1s ease-in 1 alternate;
+}
+@keyframes change-scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.15);
+  }
+}
+.like-icon.is-liked .sparks {
+  fill: var(--animation-fill-color);
+  animation: change-opacity 0.3s 0.3s ease-in 1 alternate;
+}
+@keyframes change-opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+/* ---------------------------------------LIKE HEART---------------------------------- */
+/* ---------------------------------------IMAGE-FILTER---------------------------------- */
+.image_filter_sepia {
+  filter: sepia(80%);
+}
+.image_filter_saturate {
+  filter: saturate(200%);
+}
+.image_filter_invert {
+  filter: invert(0.3);
+}
+.image_filter_blur {
+  filter: blur(0.5rem);
+}
+.image_filter_rotate {
+  filter: hue-rotate(105deg);
+}
+.image_filter_custom {
+  filter: hue-rotate(10deg) saturate(300%);
+}
+.image_filter_brightness {
+  filter: brightness(200%);
 }

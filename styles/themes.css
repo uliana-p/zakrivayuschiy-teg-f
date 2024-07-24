@@ -1,6 +1,54 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-*/
+/*                                    ✦ theme-light — класс светлой темы                                   */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-item: var(--black);
+    --main-color: var(--green-neon);
+    --background-gradient: var(--dark-background);
+    --font-title: var(--font-l-contrast);
+    --font-main: var(--font-s-contrast);
+    --button-color: var(--green-neon);
+    --animation-color: var(--green-neon);
+    --animation-fill-color: var(--red);
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-item: var(--white);
+    --main-color: var(--black);
+    --background-gradient: var(--light-background);
+    --font-title: var(--font-l);
+    --font-main: var(--font-s);
+    --animation-color: var(--black);
+    --animation-fill-color: var(--red);
+    --button-color: var(--white);
+  }
+}
+.theme-light {
+  --background-item: var(--white);
+  --main-color: var(--black);
+  --background-gradient: var(--light-background);
+  --font-title: var(--font-l);
+  --font-main: var(--font-s);
+  --animation-color: var(--black);
+  --animation-fill-color: var(--red);
+  --button-color: var(--white);
+}
+
+/*                                     ✦ theme-dark — класс тёмной темы                                     */
+.theme-dark {
+  --background-item: var(--black);
+  --main-color: var(--green-neon);
+  --background-gradient: var(--dark-background);
+  --font-title: var(--font-l-contrast);
+  --font-main: var(--font-s-contrast);
+  --button-color: var(--green-neon);
+  --animation-color: var(--green-neon);
+  --animation-fill-color: var(--red);
+  /* --title-color: var(--color-pink);
+    --item-text: var(--color-neon);
+    --color-background: var(--color-neon);
+    --text-color: var(--color-black);
+    --text-color-p: var(--color-light-pink);
+    --accent-color: var(--color-neon);
+    --outline: var(--outline-pink); */
+}

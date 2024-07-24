@@ -1,1 +1,30 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: "Inter-Variable";
+  --accent-font: "PressStart2P";
+  --red: #ff0000;
+  --white: #ffffff;
+  --green-neon: #00cc14;
+  --grey-light: #e7e7e7;
+  --black: #000;
+  --grey-dark: #1a1a1a;
+  --grey-medium: #d3d3d3;
+  --green-dark: #004306;
+  --green-light: #007f0c;
+  --font-s: 400;
+  --font-s-contrast: 465;
+  --font-l: 700;
+  --font-l-contrast: 785;
+  --text-label-color: #fff;
+  --light-background: repeating-linear-gradient(
+      var(--grey-medium),
+      transparent 2px
+    ),
+    repeating-linear-gradient(90deg, var(--grey-medium), transparent 2px),
+    repeating-linear-gradient(var(--grey-light) 0%, var(--grey-dark) 100%);
+  --dark-background: repeating-linear-gradient(var(--black), transparent 2px),
+    repeating-linear-gradient(90deg, var(--black), transparent 2px),
+    repeating-linear-gradient(var(--green-light) 0%, var(--green-dark) 100%);
+}
+/* @media (width <= 375px) {
+  .dialog__button_close  */
