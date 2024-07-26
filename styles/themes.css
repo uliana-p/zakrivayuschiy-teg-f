@@ -1,54 +1,51 @@
 /*                                    ✦ theme-light — класс светлой темы                                   */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-item: var(--black);
-    --main-color: var(--green-neon);
+    --background-item: #000;
+    --main-color: #00cc14;
     --background-gradient: var(--dark-background);
     --font-title: var(--font-l-contrast);
     --font-main: var(--font-s-contrast);
-    --button-color: var(--green-neon);
-    --animation-color: var(--green-neon);
-    --animation-fill-color: var(--red);
+    --button-color: #00cc14;
+    --animation-color: #00cc14;
+    --animation-fill-color: #ff0000;
+    --text-label-color: #000;
   }
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --background-item: var(--white);
-    --main-color: var(--black);
+    --background-item: #ffffff;
+    --main-color: #000;
     --background-gradient: var(--light-background);
     --font-title: var(--font-l);
     --font-main: var(--font-s);
-    --animation-color: var(--black);
-    --animation-fill-color: var(--red);
-    --button-color: var(--white);
+    --animation-color: #000;
+    --animation-fill-color: #ff0000;
+    --button-color: #fff;
+    --text-label-color: #fff;
   }
 }
 .theme-light {
-  --background-item: var(--white);
-  --main-color: var(--black);
+  --background-item: #ffffff;
+  --main-color: #000;
   --background-gradient: var(--light-background);
   --font-title: var(--font-l);
   --font-main: var(--font-s);
-  --animation-color: var(--black);
-  --animation-fill-color: var(--red);
-  --button-color: var(--white);
+  --animation-color: #000;
+  --animation-fill-color: #ff0000;
+  --button-color: #ffffff;
+  --text-label-color: #fff;
 }
 
 /*                                     ✦ theme-dark — класс тёмной темы                                     */
 .theme-dark {
-  --background-item: var(--black);
-  --main-color: var(--green-neon);
+  --background-item: #000;
+  --main-color: #00cc14;
   --background-gradient: var(--dark-background);
   --font-title: var(--font-l-contrast);
   --font-main: var(--font-s-contrast);
-  --button-color: var(--green-neon);
-  --animation-color: var(--green-neon);
-  --animation-fill-color: var(--red);
-  /* --title-color: var(--color-pink);
-    --item-text: var(--color-neon);
-    --color-background: var(--color-neon);
-    --text-color: var(--color-black);
-    --text-color-p: var(--color-light-pink);
-    --accent-color: var(--color-neon);
-    --outline: var(--outline-pink); */
+  --button-color: #00cc14;
+  --animation-color: #00cc14;
+  --animation-fill-color: #ff0000;
+  --text-label-color: #000;
 }
