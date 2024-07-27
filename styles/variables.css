@@ -22,12 +22,3 @@
     repeating-linear-gradient(180deg, #000 0 2px, transparent 2px 4px),
     repeating-linear-gradient(180deg, #007f0c 0%, #004306 100%);
 }
-@media (width <= 375px) {
-  .button {
-    flex-direction: column;
-  }
-  .image__floppy {
-    width: 28px;
-    height: 28px;
-  }
-}

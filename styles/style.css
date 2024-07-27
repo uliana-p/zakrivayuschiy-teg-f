@@ -19,6 +19,7 @@
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
   background-image: var(--background-gradient);
+  background-attachment: fixed;
   object-fit: cover;
   font-variation-settings: var(--font-main);
   padding-bottom: 103px;
@@ -241,7 +242,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  padding-right: 30px;
+  /* padding-right: 30px; */
   gap: 20px;
 }
 .dialog_image__floppy {
@@ -249,6 +250,7 @@
   color: var(--main-color);
 }
 .dialog__text {
+  max-width: clamp(12.375rem, 11.583rem + 3.38vw, 14.625rem);
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
   color: var(--main-color);
@@ -262,21 +264,8 @@
   padding: 30px;
 }
 .dialog__button_close {
-  border: 2px solid var(--main-color);
+  text-transform: uppercase;
   padding: 10px clamp(7rem, 6.604rem + 1.69vw, 8.125rem);
-}
-
-.dialog__button_close:focus {
-  outline: none;
-  box-shadow: 2px 2px 0px 0px var(--main-color);
-  transition: background-color 0.5s;
-}
-
-.dialog__button_close:active {
-  outline: none;
-  background-color: var(--main-color);
-
-  transition: background-color 0.5s;
 }
 
 .dialog__box[open] {
@@ -316,4 +305,14 @@
 }
 .image_filter_brightness {
   filter: brightness(200%);
+}
+
+@media (width <= 375px) {
+  .button {
+    flex-direction: column;
+  }
+  .image__floppy {
+    width: 28px;
+    height: 28px;
+  }
 }
